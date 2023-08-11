@@ -58,3 +58,125 @@ const arr1 = new Array();
 // console.log(findElement(arr, 4));
 // console.log(findElement(arr, "Hello"));
 // console.log(arr.includes(4));
+
+// TODO: question 2: how do you cheack if an element exists in an array?
+
+// const findElementIndex = (arr, target) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === target) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// };
+
+// console.log(findElementIndex(arr, "Hello"));
+// console.log(arr.indexOf("Hello"));
+
+// TODO: question 3: how to delete add and update an element from specific index?
+
+// console.log(arr);
+// arr.splice(1, 3); // start index, number of elements to be deleted
+// console.log(arr);
+
+// arr.splice(1, 0, 2, 3, 4, 5, 6); // start index, number of elements to be deleted, elements to be added
+// console.log(arr);
+
+// arr.splice(1, 3, 6, 7, 8); // start index, number of elements to be deleted, elements to be updated
+// console.log(arr);
+
+// TODO: splice vs slice
+
+// const subArr = arr.slice(1, 4); // start index, end index (exclusive)
+// console.log(subArr);
+// console.log(arr); // original array is not modified
+
+// TODO: Shallow copy vs deep copy
+
+// 1st shallow copy
+
+// const arrB = arr; // shallow copy
+// arrB.splice(1, 4); // start index, number of elements to be deleted
+// console.log(arrB, arr); // both arrays are modified
+
+// 2nd deep copy
+
+// const arrC = [...arr]; //deep copy
+// const arrD = Array.from(arr); //deep copy
+// const arrE = arr.concat(); //deep copy
+// arrC.splice(1, 4); // start index, number of elements to be deleted
+// arrD.splice(1, 4); // start index, number of elements to be deleted
+// arrE.splice(1, 4); // start index, number of elements to be deleted
+// console.log(arrC, arrD, arrE, arr); // only arrC and arrD and arrE are modified not arr (original array)
+
+// TODO: how to add two arrays?
+
+// const newArr = [...arr, 2, 3, 4];
+// const newArr1 = arr.concat([2, 3, 4]);
+// console.log(newArr, newArr1);
+
+// TODO: Question 4 : how can you check if two arrays are equal or not?
+
+// const isArrayEqual = (arr1, arr2) => {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (arr1[i] !== arr2[i]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// };
+
+// console.log(isArrayEqual([1, 2, 3], [1, 2, 3]));
+
+// const isArrayEqual = (arr1, arr2) => {
+//   return (
+//     arr1.length === arr2.length &&
+//     arr1.every((element, i) => arr1[i] === arr2[i])
+//   );
+// };
+
+// console.log(isArrayEqual([1, 2, 3], [1, 2, 3]));
+
+// TODO: Question 5 : how to sort an array in ascending and descending order?
+
+const x = [1, 4, 6, 9, -9, -5];
+// x.sort();
+console.log(x);
+
+// x.sort((a, b) => a - b); // a - b => ascending order
+// console.log(x);
+
+// x.sort((a, b) => b - a); // b - a => descending order
+// console.log(x);
+
+// TODO: Question 6 : how to reverse an array?
+
+// x.reverse();
+// console.log(x);
+
+// map ,filter, reduce
+
+// const newMapArr = x.map((element, i) => element * element);
+// console.log(newMapArr);
+
+// const positiveNumbers = x.filter((element, i) => element > 0);
+// console.log(positiveNumbers);
+
+// const sumArr = positiveNumbers.reduce((acc, element, i) => acc + element);
+// console.log(sumArr);
+
+// flat
+
+// const y = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]];
+// flatArray = y.flat(3);
+// console.log(flatArray);
+
+// // filter vs find
+
+// const positiveNumber = x.find((element, i) => element > 0);
+// console.log(positiveNumber);

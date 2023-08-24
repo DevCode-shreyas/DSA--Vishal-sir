@@ -114,3 +114,9 @@ var mergeAlternately = function (word1, word2) {
   }
   return result;
 };
+
+//TODO: question-6 : Length of Last Word
+var lengthOfLastWord = function (s) {
+  let trimmedString = s.trim();
+  return trimmedString.length - trimmedString.lastIndexOf(" ") - 1;
+};

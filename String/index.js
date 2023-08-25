@@ -120,3 +120,26 @@ var lengthOfLastWord = function (s) {
   let trimmedString = s.trim();
   return trimmedString.length - trimmedString.lastIndexOf(" ") - 1;
 };
+
+//TODO: Valid Palidrome
+
+var isPalindrome = function (s) {
+  s = s.replace(/[^a-z0-9]/gi, "").toLowerCase();
+
+  // If string is just with one character then return true
+  if (s.length < 2) return true;
+
+  // Assignment of the variables
+  let i = 0;
+  let count = s.length - 1;
+
+  // Loop till (max), half of the total length of the string
+  while (i < count + 1 / 2) {
+    // If value is not a match the return false as it's not valid string
+    if (s[i] != s[count - i]) {
+      return false;
+    }
+    i++;
+  }
+  return true;
+};

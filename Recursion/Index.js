@@ -40,3 +40,13 @@ function fib(n) {
 }
 
 console.log(fib(5));
+
+// Sum of digits of a number
+function sumOfDigits(n) {
+  if (n <= 0) {
+    return 0;
+  }
+  return (n % 10) + sumOfDigits(Math.floor(n / 10));
+}
+
+console.log(sumOfDigits(1234));

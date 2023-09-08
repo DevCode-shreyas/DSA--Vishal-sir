@@ -11,42 +11,142 @@
 
 // fun(5);
 
-// factorial of a number
+// function multiply(arr) {
+//   console.log(arr);
+//   if (arr.length <= 0) {
+//     return 1;
+//   } else return arr[arr.length - 1] * multiply(arr.slice(0, arr.length - 1));
+// }
+// console.log(multiply([1, 2, 3, 4]));
+
+// factorial of a number  n! = n * (n-1)! 5! = 5 * 4 * 3 * 2 * 1
 function fact(n) {
+  console.log(n);
   if (n == 0) {
     return 1;
-  }
-  return n * fact(n - 1);
+  } else return n * fact(n - 1);
 }
 
-console.log(fact(8));
+// console.log(fact(5));
 
 // Sum of Array
-function sum(arr, n) {
-  if (n <= 0) {
-    return 0;
-  }
-  return sum(arr, n - 1) + arr[n - 1];
-}
+// function sum(arr, n) {
+//   if (n <= 0) {
+//     return 0;
+//   }
+//   return sum(arr, n - 1) + arr[n - 1];
+// }
 
-console.log(sum([1, 2, 3, 4, 5], 5));
+// console.log(sum([1, 2, 3, 4, 5], 5));
 
 // Fibonacci numbers
 function fib(n) {
+  console.log(n);
   if (n <= 1) {
     return n;
   }
   return fib(n - 1) + fib(n - 2);
 }
 
-console.log(fib(5));
+// console.log(fib(5));
 
 // Sum of digits of a number
-function sumOfDigits(n) {
-  if (n <= 0) {
-    return 0;
+// function sumOfDigits(n) {
+//   if (n <= 0) {
+//     return 0;
+//   }
+//   return (n % 10) + sumOfDigits(Math.floor(n / 10));
+// }
+
+// console.log(sumOfDigits(1234));
+
+// Range of numbers
+function rangeOfNumbers(startNum, endNum) {
+  console.log(startNum, endNum);
+  if (endNum < startNum) {
+    return [];
+  } else {
+    const numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
   }
-  return (n % 10) + sumOfDigits(Math.floor(n / 10));
 }
 
-console.log(sumOfDigits(1234));
+// console.log(rangeOfNumbers(0, 5));
+
+// Palindrome
+function palindrome(str) {
+  if (str.length <= 1) {
+    return true;
+  }
+  if (str[0] == str[str.length - 1]) {
+    return palindrome(str.slice(1, str.length - 1));
+  }
+  return false;
+}
+
+// console.log(palindrome("racecar"));
+
+// Reverse a string
+function reverseString(str) {
+  // if (str.length <= 1) {
+  //   return str;
+  // }
+  // return reverseString(str.slice(1)) + str[0];
+
+  if (str === "") {
+    return "";
+  } else return reverseString(str.substr(1)) + str.charAt(0);
+}
+
+// console.log(reverseString("hello"));
+
+// Subsets of a string
+
+function subsets(str) {
+  if (str.length <= 0) {
+    return [""];
+  }
+  const subsetsOfRest = subsets(str.slice(1));
+  const subsetsOfFirst = subsetsOfRest.map((item) => str[0] + item);
+  return [...subsetsOfFirst, ...subsetsOfRest];
+}
+
+console.log(subsets("123"));
+
+// subset with backtracking algo
+function subsetsWithBacktracking(str) {
+  const result = [];
+  const backtrack = (str, slate, index) => {
+    if (index === str.length) {
+      result.push(slate);
+      return;
+    }
+    backtrack(str, slate, index + 1);
+    backtrack(str, slate + str[index], index + 1);
+  };
+  backtrack(str, "", 0);
+  return result;
+}
+
+// console.log(subsetsWithBacktracking("123"));
+
+function subsets(nums) {
+  let result = [];
+  let temp = [];
+
+  function recursiveSubsets(nums, i) {
+    if (i === nums.length) {
+      return result.push([...temp]);
+    }
+    temp.push(nums[i]);
+    recursiveSubsets(nums, i + 1);
+    temp.pop();
+    recursiveSubsets(nums, i + 1);
+  }
+
+  recursiveSubsets(nums, 0);
+  return result;
+}
+
+console.log(subsets([1, 2, 3]));

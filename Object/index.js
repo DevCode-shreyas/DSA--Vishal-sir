@@ -190,3 +190,15 @@ var kidsWithCandies = function (candies, extraCandies) {
   }
   return result;
 };
+
+// 1470. Shuffle the Array
+// https://leetcode.com/problems/shuffle-the-array/
+
+var shuffle = function (nums, n) {
+  let result = [];
+  for (let i = 0; i < n; i++) {
+    result.push(nums[i]);
+    result.push(nums[i + n]);
+  }
+  return result;
+};

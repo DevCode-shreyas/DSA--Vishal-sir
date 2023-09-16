@@ -202,3 +202,16 @@ var shuffle = function (nums, n) {
   }
   return result;
 };
+
+// 1480. Running Sum of 1d Array
+// https://leetcode.com/problems/running-sum-of-1d-array/
+
+var runningSum = function (nums) {
+  let result = [];
+  let sum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum = sum + nums[i];
+    result.push(sum);
+  }
+  return result;
+};

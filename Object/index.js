@@ -215,3 +215,18 @@ var runningSum = function (nums) {
   }
   return result;
 };
+
+// 1108. Defanging an IP Address
+// https://leetcode.com/problems/defanging-an-ip-address/
+
+var defangIPaddr = function (address) {
+  let result = "";
+  for (let i = 0; i < address.length; i++) {
+    if (address[i] == ".") {
+      result = result + "[.]";
+    } else {
+      result = result + address[i];
+    }
+  }
+  return result;
+};

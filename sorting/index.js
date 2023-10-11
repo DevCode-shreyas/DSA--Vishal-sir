@@ -154,3 +154,21 @@ console.log(insertionSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
 const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
 
 console.log(fruits.sort());
+
+// question 1
+
+// 1. Write a program to sort an array of numbers in ascending or descending order.
+
+// Examples:
+// Input: [3, 5, 1, 2, 4]
+// Output: [1, 2, 3, 4, 5]
+
+const arr = [3, 5, 1, 2, 4];
+
+const sortArr = (arr) => {
+  return arr.sort((a, b) => {
+    return a - b;
+  });
+};
+
+console.log(sortArr(arr));

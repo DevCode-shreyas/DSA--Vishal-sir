@@ -172,3 +172,17 @@ const sortArr = (arr) => {
 };
 
 console.log(sortArr(arr));
+
+// 2. Write a program to sort an array of strings in ascending or descending order.
+
+// Examples:
+// Input: ["a", "c", "b", "d"]
+// Output: ["a", "b", "c", "d"]
+
+const strArr = ["a", "c", "b", "d"];
+
+const sortStrArr = (arr) => {
+  return arr.sort();
+};
+
+console.log(sortStrArr(strArr)); // ["a", "b", "c", "d"]

@@ -186,3 +186,20 @@ const sortStrArr = (arr) => {
 };
 
 console.log(sortStrArr(strArr)); // ["a", "b", "c", "d"]
+
+// leetcode 912. Sort an Array
+
+// Given an array of integers nums, sort the array in ascending order.
+
+// Example 1:
+
+// Input: nums = [5,2,3,1]
+// Output: [1,2,3,5]
+
+const sortArr1 = (arr) => {
+  return arr.sort((a, b) => {
+    return a - b;
+  });
+};
+
+console.log(sortArr1([5, 2, 3, 1])); // [1, 2, 3, 5]

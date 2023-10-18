@@ -93,7 +93,7 @@ const bubbleSort = (arr) => {
   return arr;
 };
 
-console.log(bubbleSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
+// console.log(bubbleSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
 
 //Best time complexity: O(n)
 // worst time complexity : O(n^2)
@@ -118,7 +118,7 @@ const selectionSort = (arr) => {
   return arr;
 };
 
-console.log(selectionSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
+// console.log(selectionSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
 
 // Best time complexity: O(n^2)
 // worst time complexity : O(n^2)
@@ -142,7 +142,7 @@ const insertionSort = (arr) => {
   return arr;
 };
 
-console.log(insertionSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
+// console.log(insertionSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
 
 // Best time complexity: O(n)
 // worst time complexity : O(n^2)
@@ -153,7 +153,7 @@ console.log(insertionSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
 
 const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
 
-console.log(fruits.sort());
+// console.log(fruits.sort());
 
 // question 1
 
@@ -171,7 +171,7 @@ const sortArr = (arr) => {
   });
 };
 
-console.log(sortArr(arr));
+// console.log(sortArr(arr));
 
 // 2. Write a program to sort an array of strings in ascending or descending order.
 
@@ -185,7 +185,7 @@ const sortStrArr = (arr) => {
   return arr.sort();
 };
 
-console.log(sortStrArr(strArr)); // ["a", "b", "c", "d"]
+// console.log(sortStrArr(strArr)); // ["a", "b", "c", "d"]
 
 // leetcode 912. Sort an Array
 
@@ -202,7 +202,7 @@ const sortArr1 = (arr) => {
   });
 };
 
-console.log(sortArr1([5, 2, 3, 1])); // [1, 2, 3, 5]
+// console.log(sortArr1([5, 2, 3, 1])); // [1, 2, 3, 5]
 
 // leetcode 1470. Shuffle the Array
 
@@ -218,4 +218,39 @@ const shuffle = (nums, n) => {
   return result;
 };
 
-console.log(shuffle([2, 5, 1, 3, 4, 7], 3)); // [2, 3, 5, 4, 1, 7]
+// console.log(shuffle([2, 5, 1, 3, 4, 7], 3)); // [2, 3, 5, 4, 1, 7]
+
+// Merge Sort
+
+const mergeSort = (arr) => {
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  return merge(left, right);
+};
+
+const merge = (left, right) => {
+  const result = [];
+  let leftIndex = 0,
+    rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex++]);
+    } else result.push(right[rightIndex++]);
+  }
+
+  while (leftIndex < left.length) {
+    result.push(left[leftIndex++]);
+  }
+  while (rightIndex < right.length) {
+    result.push(right[rightIndex++]);
+  }
+  return result;
+};
+
+console.log(mergeSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]

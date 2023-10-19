@@ -280,3 +280,6 @@ function merge(left, right) {
 }
 
 console.log(mergSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
+
+// time complexity : O(logn)
+// space complexity : O(n)

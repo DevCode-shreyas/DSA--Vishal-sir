@@ -153,7 +153,7 @@ const insertionSort = (arr) => {
 
 const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
 
-// console.log(fruits.sort());
+// console.log(fruits.sort());t
 
 // question 1
 
@@ -222,35 +222,61 @@ const shuffle = (nums, n) => {
 
 // Merge Sort
 
-const mergeSort = (arr) => {
-  if (arr.length < 2) {
-    return arr;
-  }
+// const mergeSort = (arr) => {
+//   if (arr.length < 2) {
+//     return arr;
+//   }
+
+//   let mid = Math.floor(arr.length / 2);
+//   let left = mergeSort(arr.slice(0, mid));
+//   let right = mergeSort(arr.slice(mid));
+//   return merge(left, right);
+// };
+
+// const merge = (left, right) => {
+//   const result = [];
+//   let leftIndex = 0,
+//     rightIndex = 0;
+
+//   while (leftIndex < left.length && rightIndex < right.length) {
+//     if (left[leftIndex] < right[rightIndex]) {
+//       result.push(left[leftIndex++]);
+//     } else result.push(right[rightIndex++]);
+//   }
+
+//   while (leftIndex < left.length) {
+//     result.push(left[leftIndex++]);
+//   }
+//   while (rightIndex < right.length) {
+//     result.push(right[rightIndex++]);
+//   }
+//   return result;
+// };
+
+// console.log(mergeSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
+
+function mergSort(arr) {
+  if (arr.length <= 1) return arr;
 
   let mid = Math.floor(arr.length / 2);
-  let left = mergeSort(arr.slice(0, mid));
-  let right = mergeSort(arr.slice(mid));
+
+  let left = mergSort(arr.slice(0, mid));
+  let right = mergSort(arr.slice(mid));
+
   return merge(left, right);
-};
+}
 
-const merge = (left, right) => {
-  const result = [];
-  let leftIndex = 0,
-    rightIndex = 0;
+function merge(left, right) {
+  let sortedArr = [];
 
-  while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex++]);
-    } else result.push(right[rightIndex++]);
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      sortedArr.push(left.shift());
+    } else {
+      sortedArr.push(right.shift());
+    }
   }
+  return [...sortedArr, ...left, ...right];
+}
 
-  while (leftIndex < left.length) {
-    result.push(left[leftIndex++]);
-  }
-  while (rightIndex < right.length) {
-    result.push(right[rightIndex++]);
-  }
-  return result;
-};
-
-console.log(mergeSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
+console.log(mergSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]

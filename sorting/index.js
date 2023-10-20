@@ -283,3 +283,44 @@ console.log(mergSort([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]
 
 // time complexity : O(logn)
 // space complexity : O(n)
+
+// question on merge sort
+
+// 1. Write a program to sort an array of numbers in ascending or descending order using merge sort.
+
+// Examples:
+// Input: [3, 5, 1, 2, 4]
+// Output: [1, 2, 3, 4, 5]
+
+const mergeSort1 = (arr) => {
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort1(arr.slice(0, mid));
+  let right = mergeSort1(arr.slice(mid));
+  return merge1(left, right);
+};
+
+const merge1 = (left, right) => {
+  const result = [];
+  let leftIndex = 0,
+    rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex++]);
+    } else result.push(right[rightIndex++]);
+  }
+
+  while (leftIndex < left.length) {
+    result.push(left[leftIndex++]);
+  }
+  while (rightIndex < right.length) {
+    result.push(right[rightIndex++]);
+  }
+  return result;
+};
+
+console.log(mergeSort1([3, 5, 1, 2, 4])); // [1, 2, 3, 4, 5]

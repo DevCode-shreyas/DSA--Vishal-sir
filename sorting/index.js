@@ -363,3 +363,5 @@ const merge2 = (left, right) => {
 };
 
 console.log(mergeSort2(["a", "c", "b", "d"])); // ["a", "b", "c", "d"]
+
+// question on merge sort

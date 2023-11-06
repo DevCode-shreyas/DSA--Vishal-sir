@@ -363,3 +363,5 @@ const merge2 = (left, right) => {
 };
 
 console.log(mergeSort2(["a", "c", "b", "d"])); // ["a", "b", "c", "d"]
+
+// 3. Write a program to sort an array of objects in ascending or descending order using merge sort.

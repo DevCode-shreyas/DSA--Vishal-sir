@@ -164,3 +164,24 @@ function reverseWord(word) {
   }
   return reversedWord;
 }
+
+// TODO: question-8 : Reverse Words in a String III
+
+var reverseWords = function (s) {
+  let arr = s.split(" ");
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let word = arr[i];
+    let reversedWord = reverseWord(word);
+    result.push(reversedWord);
+  }
+  return result.join(" ");
+};
+
+function reverseWord(word) {
+  let reversedWord = "";
+  for (let i = word.length - 1; i >= 0; i--) {
+    reversedWord += word[i];
+  }
+  return reversedWord;
+}

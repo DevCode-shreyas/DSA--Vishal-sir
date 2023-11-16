@@ -164,4 +164,3 @@ function reverseWord(word) {
   }
   return reversedWord;
 }
-

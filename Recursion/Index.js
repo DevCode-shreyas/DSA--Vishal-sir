@@ -130,3 +130,23 @@ function subsetsWithBacktracking(str) {
 }
 
 // console.log(subsetsWithBacktracking("123"));
+
+// Permutations of a string
+function permutations(str) {
+  if (str.length <= 1) {
+    return [str];
+  }
+  const result = [];
+  for (let i = 0; i < str.length; i++) {
+    const firstChar = str[i];
+    const rest = str.slice(0, i) + str.slice(i + 1);
+    const permutationsOfRest = permutations(rest);
+    const permutationsWithFirst = permutationsOfRest.map(
+      (item) => firstChar + item
+    );
+    result.push(...permutationsWithFirst);
+  }
+  return result;
+}
+
+console.log(permutations("abc"));

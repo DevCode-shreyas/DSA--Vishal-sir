@@ -113,22 +113,3 @@ function subsets(str) {
 }
 
 console.log(subsets("123"));
-
-// subset with backtracking algo
-function subsetsWithBacktracking(str) {
-  const result = [];
-  const backtrack = (str, slate, index) => {
-    if (index === str.length) {
-      result.push(slate);
-      return;
-    }
-    backtrack(str, slate, index + 1);
-    backtrack(str, slate + str[index], index + 1);
-  };
-  backtrack(str, "", 0);
-  return result;
-}
-
-// console.log(subsetsWithBacktracking("123"));
-
-

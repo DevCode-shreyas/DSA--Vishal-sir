@@ -113,3 +113,24 @@ function subsets(str) {
 }
 
 console.log(subsets("123"));
+
+// Permutations of a string
+
+function permutations(str) {
+  if (str.length <= 1) {
+    return [str];
+  }
+  const permutationsOfRest = permutations(str.slice(1));
+  const firstChar = str[0];
+  const permutationsOfAll = [];
+  permutationsOfRest.forEach((item) => {
+    for (let i = 0; i <= item.length; i++) {
+      permutationsOfAll.push(
+        item.slice(0, i) + firstChar + item.slice(i, item.length)
+      );
+    }
+  });
+  return permutationsOfAll;
+}
+
+console.log(permutations("123"));

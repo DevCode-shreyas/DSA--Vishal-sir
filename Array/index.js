@@ -1,6 +1,6 @@
 // Array
 
-const arr = [1, 2, 3, 4, "Hello", { name: "shreyas" }, [1, 2, 3], 4];
+// const arr = [1, 2, 3, 4, "Hello", { name: "shreyas" }, [1, 2, 3], 4];
 const arr1 = new Array();
 
 //TODO: how to access the first and last element of an array
@@ -75,11 +75,12 @@ const arr1 = new Array();
 
 // TODO: question 3: how to delete add and update an element from specific index?
 
-// console.log(arr);
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(arr);
 // arr.splice(1, 3); // start index, number of elements to be deleted
 // console.log(arr);
 
-// arr.splice(1, 0, 2, 3, 4, 5, 6); // start index, number of elements to be deleted, elements to be added
+// arr.splice(1, 0, 21, 31, 41, 51, 61); // start index, number of elements to be deleted, elements to be added
 // console.log(arr);
 
 // arr.splice(1, 3, 6, 7, 8); // start index, number of elements to be deleted, elements to be updated
@@ -144,9 +145,9 @@ const arr1 = new Array();
 
 // TODO: Question 5 : how to sort an array in ascending and descending order?
 
-const x = [1, 4, 6, 9, -9, -5];
+// const x = [1, 4, 6, 9, -9, -5];
 // x.sort();
-console.log(x);
+// console.log(x);
 
 // x.sort((a, b) => a - b); // a - b => ascending order
 // console.log(x);

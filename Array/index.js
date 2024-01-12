@@ -1,6 +1,6 @@
 // Array
 
-// const arr = [1, 2, 3, 4, "Hello", { name: "shreyas" }, [1, 2, 3], 4];
+const arr = [1, 2, 3, 4, "Hello", { name: "shreyas" }, [1, 2, 3], 4];
 const arr1 = new Array();
 
 //TODO: how to access the first and last element of an array
@@ -75,7 +75,7 @@ const arr1 = new Array();
 
 // TODO: question 3: how to delete add and update an element from specific index?
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
+// const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(arr);
 // arr.splice(1, 3); // start index, number of elements to be deleted
 // console.log(arr);
@@ -162,13 +162,13 @@ console.log(arr);
 
 // map ,filter, reduce
 
-// const newMapArr = x.map((element, i) => element * element);
+// const newMapArr = x.map((element, i) => element * element); // it returns a new array
 // console.log(newMapArr);
 
-// const positiveNumbers = x.filter((element, i) => element > 0);
+// const positiveNumbers = x.filter((element, i) => element > 0); // it returns a new array
 // console.log(positiveNumbers);
 
-// const sumArr = positiveNumbers.reduce((acc, element, i) => acc + element);
+// const sumArr = positiveNumbers.reduce((acc, element, i) => acc + element); // it returns a new array
 // console.log(sumArr);
 
 // flat
@@ -177,7 +177,10 @@ console.log(arr);
 // flatArray = y.flat(3);
 // console.log(flatArray);
 
-// // filter vs find
+// filter vs find
 
 // const positiveNumber = x.find((element, i) => element > 0);
 // console.log(positiveNumber);
+
+// const positiveNumbers = x.filter((element, i) => element > 0);
+// console.log(positiveNumbers);

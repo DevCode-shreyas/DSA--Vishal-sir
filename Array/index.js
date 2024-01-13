@@ -184,3 +184,9 @@ console.log(arr);
 
 // const positiveNumbers = x.filter((element, i) => element > 0);
 // console.log(positiveNumbers);
+
+// TODO: Question 7 : how to find the maximum and minimum element in an array?
+
+const x = [1, 4, 6, 9, -9, -5];
+console.log(Math.max(...x));
+console.log(Math.min(...x));

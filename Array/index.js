@@ -190,3 +190,8 @@ console.log(arr);
 const x = [1, 4, 6, 9, -9, -5];
 console.log(Math.max(...x));
 console.log(Math.min(...x));
+
+// TODO: Question 8 : how to find the sum of an array?
+
+const sum = x.reduce((acc, element, i) => acc + element);
+console.log(sum);

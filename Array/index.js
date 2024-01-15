@@ -195,3 +195,8 @@ console.log(Math.min(...x));
 
 const sum = x.reduce((acc, element, i) => acc + element);
 console.log(sum);
+
+// TODO: Question 9 : how to find the average of an array?
+
+const average = x.reduce((acc, element, i) => acc + element) / x.length;
+console.log(average);

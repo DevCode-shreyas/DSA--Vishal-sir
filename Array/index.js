@@ -203,14 +203,14 @@ console.log(average);
 
 // TODO: Question 10 : how to remove duplicate elements from an array?
 
-const removeDuplicate = (arr) => {
-  const newArr = [];
-  for (const x of arr) {
-    if (!newArr.includes(x)) {
-      newArr.push(x);
-    }
-  }
-  return newArr;
-};
+// const removeDuplicate = (arr) => {
+//   const newArr = [];
+//   for (const x of arr) {
+//     if (!newArr.includes(x)) {
+//       newArr.push(x);
+//     }
+//   }
+//   return newArr;
+// };
 
-console.log(removeDuplicate([1, 2, 3, 4, 5, 1, 2, 3, 4, 5]));
+// console.log(removeDuplicate([1, 2, 3, 4, 5, 1, 2, 3, 4, 5]));

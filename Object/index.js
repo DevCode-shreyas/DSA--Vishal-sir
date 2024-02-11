@@ -258,3 +258,13 @@ var maximumWealth = function (accounts) {
   }
   return max;
 };
+
+// 1486. XOR Operation in an Array
+
+var xorOperation = function (n, start) {
+  let result = start;
+  for (let i = 1; i < n; i++) {
+    result = result ^ (start + 2 * i);
+  }
+  return result;
+};

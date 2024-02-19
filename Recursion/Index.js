@@ -148,3 +148,25 @@ function towerOfHanoi(n, source, destination, auxiliary) {
 }
 
 towerOfHanoi(3, "A", "C", "B");
+
+// Binary Search
+
+function binarySearch(arr, x, start, end) {
+  if (start > end) {
+    return -1;
+  }
+  const mid = Math.floor((start + end) / 2);
+  if (arr[mid] === x) {
+    return mid;
+  }
+  if (arr[mid] > x) {
+    return binarySearch(arr, x, start, mid - 1);
+  } else {
+    return binarySearch(arr, x, mid + 1, end);
+  }
+}
+
+const arr = [2, 3, 4, 10, 40];
+const x = 10;
+
+console.log(binarySearch(arr, x, 0, arr.length - 1));
